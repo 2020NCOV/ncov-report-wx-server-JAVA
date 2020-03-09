@@ -28,6 +28,7 @@ func (service *UserOpenIdService) GetCode(c *gin.Context) serializer.Response {
 	}
 
 	info := model.Code{
+		ErrCode: res.ErrCode,
 		Uid:   res.OpenID,
 		Token: res.SessionKey,
 		Code:  service.Code,

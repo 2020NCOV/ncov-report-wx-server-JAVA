@@ -4,8 +4,9 @@ import "Miniprogram-server-Golang/model"
 
 // Usertoken 用户token
 type Status struct {
-	Uid   string `json:"uid"`
-	Token string `json:"token"`
+	ErrCode int `json:"errcode"`
+	Uid     string `json:"uid"`
+	Token   string `json:"token"`
 }
 
 // student 用户序列化器
@@ -73,8 +74,9 @@ func BuildCorp(corp model.Corp) Corp {
 // BuildStatus 序列化status
 func BuildStatus(info model.Code) Status {
 	return Status{
-		Uid:   info.Uid,
-		Token: info.Token,
+		ErrCode: info.ErrCode,
+		Uid:     info.Uid,
+		Token:   info.Token,
 	}
 }
 
